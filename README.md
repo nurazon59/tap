@@ -32,6 +32,8 @@ brew livecheck --cask nurazon59/tap/gather-v2
 
 Gather 2.0はアプリ内の自動更新に対応している。Caskの新バージョンは、公式のElectron Builder更新メタデータから`brew livecheck`で検出する。
 
+GitHub Actionsの`Daily livecheck`は毎日09:17（日本時間）にtap内のCaskを確認し、結果を実行ログとSummaryに記録する。Actions画面から手動実行もできる。
+
 Caskを更新するときは、`version`と配布ファイルの`sha256`を更新する。
 
 Renovateの標準Homebrew managerは、このCaskの配布URLに対応していない。Renovateで更新する場合は、独自のdatasource・managerとSHA-256を更新する仕組みが必要。
