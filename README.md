@@ -1,25 +1,25 @@
 # Homebrew Tap
 
-個人用のHomebrew Formula・Caskを管理するリポジトリ。
+A personal collection of Homebrew formulae and casks.
 
-## インストール
+## Installation
 
 ```sh
 brew tap nurazon59/tap https://github.com/nurazon59/tap
 brew install --cask nurazon59/tap/gather-v2
 ```
 
-| Cask | アプリ | 対応環境 |
+| Cask | App | Requirements |
 | --- | --- | --- |
-| `gather-v2` | [Gather 2.0](https://www.gather.town/download) | macOS 13以降、Apple Silicon / Intel |
+| `gather-v2` | [Gather 2.0](https://www.gather.town/download) | macOS 13 or later, Apple Silicon / Intel |
 
-## 開発
+## Development
 
 ```sh
 ghq get nurazon59/tap
 ```
 
-GUIアプリは`Casks/`、CLIなどは`Formula/`に追加する。
+Add GUI apps to `Casks/` and command-line tools to `Formula/`.
 
 ```sh
 brew style Casks/gather-v2.rb
@@ -28,12 +28,12 @@ brew fetch --cask nurazon59/tap/gather-v2
 brew livecheck --cask nurazon59/tap/gather-v2
 ```
 
-## 更新
+## Updates
 
-Gather 2.0はアプリ内の自動更新に対応している。Caskの新バージョンは、公式のElectron Builder更新メタデータから`brew livecheck`で検出する。
+Gather 2.0 supports automatic updates within the app. `brew livecheck` detects new versions using the official Electron Builder update metadata.
 
-GitHub Actionsの`Daily livecheck`は毎日09:17（日本時間）にtap内のCaskを確認し、結果を実行ログとSummaryに記録する。Actions画面から手動実行もできる。
+The `Daily livecheck` GitHub Actions workflow checks the casks in this tap daily at 09:17 JST (00:17 UTC) and records the results in the run logs and job summary. You can also run it manually from the Actions tab.
 
-Caskを更新するときは、`version`と配布ファイルの`sha256`を更新する。
+To update a cask, update its `version` and the `sha256` checksum of the download.
 
-Renovateの標準Homebrew managerは、このCaskの配布URLに対応していない。Renovateで更新する場合は、独自のdatasource・managerとSHA-256を更新する仕組みが必要。
+Renovate's built-in Homebrew manager does not support this cask's download URL. Updating it with Renovate would require a custom datasource and manager, plus a way to update the SHA-256 checksum.
