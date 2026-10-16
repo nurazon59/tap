@@ -13,7 +13,7 @@ cask "gather-v2" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "GatherV2.app"
 end
